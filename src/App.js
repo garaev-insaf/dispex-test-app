@@ -1,11 +1,14 @@
-import React from 'react';
-import './App.css';
-import { MainPage } from './MainPage/MainPage';
+import React from "react";
+import "./App.css";
+import { SearchAddressMainPage } from "./SearchAddressMainPage/SearchAddressMainPage";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-  return (
-    <MainPage/>
-  );
+	return (
+		<Router>
+			<SearchAddressMainPage />
+		</Router>
+	);
 }
 
 export default App;

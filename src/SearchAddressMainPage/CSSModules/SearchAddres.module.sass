@@ -1,0 +1,65 @@
+.content
+    position: relative
+    width: 100%
+    height: calc( 100vh - 80px)
+    display: block
+
+.container
+    position: relative
+    max-width: 1400px
+    margin: 0 auto
+    display: block
+    height: 100%
+    box-sizing: border-box
+    padding-top: 40px
+
+.actionBlock
+    padding: 40px
+    display: block
+    position: relative
+    min-height: 80px
+    width: 100%
+    background: white
+    border-radius: 40px
+
+.actionBlock:not(:first-of-type)
+    margin-top: 40px
+
+.actionBlockHeader
+    height: 40px
+
+.actionBlockMain
+    margin-top: 40px
+
+.searchInput
+    border: none
+    height: 30px
+    padding-left: 5px
+    border: 1px solid #989fa468
+    font-size: 16px
+    border-radius: 0px
+    width: 100%
+
+.searchInput:focus
+    outline-color: #d7e5ee
+
+.actionLink
+    cursor: pointer
+    position: relative
+    margin-left: auto
+    margin-top: 20px
+    border-radius: 10px
+    border: none
+    background-color: #8ac0e2
+    width: 100px
+    height: 40px
+    display: flex
+    font-size: 16px
+    align-items: center
+    justify-content: center
+    transition: 100ms
+    text-decoration: none
+    color: black
+
+.actionLink:active
+    background-color: green

@@ -1,0 +1,66 @@
+.search-address-start-page
+    .search-address-start-page-container
+        header.search-header
+            h2
+                font-size: 30px
+        main.search-main
+            .search-main-header::before
+                content: "*"
+                height: 10px
+                color: red
+            .search-main-header
+                height: 24px
+                display: flex
+                align-items: center
+                h3
+                    line-height: 24px
+                    vertical-align: center
+                    font-weight: normal
+                    font-size: 20px
+                    margin-left: 5px
+
+            .inputs-wrapper
+                position: relative
+                margin-top: 20px
+                display: flex
+                justify-content: space-between
+                .street-dropdown-block
+                    position: relative
+                    max-width: 50%
+                    width: 400px
+                    display: flex
+                    flex-direction: column
+                .house-dropdown-block
+                    position: relative
+                    max-width: 25%
+                    width: 200px
+                .flat-dropdown-block
+                    position: relative
+                    max-width: 25%
+                    width: 200px
+                
+                .dropwdown-block
+                    position: relative
+                    .drop-down-content.active
+                        display: block
+                    .drop-down-content.passive
+                        display: none
+                    .drop-down-content
+                        position: relative
+                        ul.items-list::-webkit-scrollbar
+                            background-color: #e9edff
+                            width: 10px
+                        ul.items-list::-webkit-scrollbar-thumb
+                            border-radius: 10px
+                            background-color: #71b8e4
+                        ul.items-list
+                            width: 100%
+                            list-style-type: none
+                            height: 100px
+                            overflow: auto
+                            padding-left: 5px
+                            li
+                                cursor: pointer
+                                height: 20px
+                            li:hover
+                                background-color: #e9edff
