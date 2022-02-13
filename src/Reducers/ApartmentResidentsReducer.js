@@ -8,5 +8,27 @@ const apartmentResidentsListReducer = (apartmentResidentsList = [], action) => {
 	}
 };
 
+const putApartmentResidentsListReducer = (putApartmentResidents = [], action) => {
+	switch (action.type) {
+		case "PUT_RESIDENTS":
+			console.log(action.putApartmentResidents)
+			return action.putApartmentResidents.data;
+		default:
+			return putApartmentResidents;
+	}
+};
 
-export { apartmentResidentsListReducer } ;
+
+const addressNameReducer = (addressName = [], action) => {
+	switch (action.type) {
+		case "GET_ADDRESS_NAME":
+			console.log(action.addressName.data)
+			return action.addressName.data;
+		default:
+			return addressName;
+	}
+};
+
+
+
+export { apartmentResidentsListReducer, addressNameReducer, putApartmentResidentsListReducer } ;

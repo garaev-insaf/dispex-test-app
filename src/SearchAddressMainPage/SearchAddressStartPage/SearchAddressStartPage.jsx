@@ -49,9 +49,11 @@ const SearchAddressStartPage = ({
 			setStreetsState({ ...streetsState, data: newArray });
 		}
 	}, [streetsList]);
+
 	useEffect(() => {
 		setHousesState({ ...housesState, data: housesList });
 	}, [housesList]);
+	
 	useEffect(() => {
 		const timeArray = flatsList;
 		if (timeArray.length > 0) {
@@ -59,6 +61,7 @@ const SearchAddressStartPage = ({
 			setFlatsState({ ...flatsState, data: newArray });
 		}
 	}, [flatsList]);
+
 	console.log(flatsState);
 	// получение улиц
 	const getStreets = () => {
@@ -93,7 +96,6 @@ const SearchAddressStartPage = ({
 				!elRefs.current[activeDropDownMenu - 1].current.contains(event.target) &&
 				event.target.tagName !== "INPUT"
 			) {
-				console.log("зашёл сюда");
 				setActiveDropDownMenu(0);
 			} else if (activeDropDownMenu !== 0 && event.target.tagName === "LI") {
 				if (activeDropDownMenu === 1) {
@@ -230,19 +232,19 @@ const SearchAddressStartPage = ({
 	useEffect(() => {
 		const array = streetsState.data;
 		array.sort(SortStreets);
-		setToggler(!toggler);
+		setToggler(() => !toggler);
 	}, [streetsState]);
 
 	useEffect(() => {
 		const array = housesState.data;
 		array.sort(SortStreets);
-		setToggler(!toggler);
+		setToggler(() => !toggler);
 	}, [housesState]);
 
 	useEffect(() => {
 		const array = flatsState.data;
 		array.sort(SortStreets);
-		setToggler(!toggler);
+		setToggler(() => !toggler);
 	}, [flatsState]);
 
 	const onChangeHalder = (type, event) => {
@@ -350,7 +352,27 @@ const SearchAddressStartPage = ({
 								</div>
 							</div>
 						</div>
-						<Link className={`${styles.actionLink}`} to={`/addresses-residents?id=${flatsList.find((elem) => elem.name === flatsState.currentValue)?.id}`}>Поиск</Link>
+						<Link
+							className={`${styles.actionLink}`}
+							to={`/addresses-residents?fid=${
+								flatsList.find(
+									(elem) => elem.name.toLowerCase() === flatsState.currentValue.toLowerCase()
+								)?.id
+							}&sid=${
+								streetsList.find(
+									(elem) => elem.name.toLowerCase() === streetsState.currentValue.toLowerCase()
+								)?.id
+							}&hid=${
+								housesList.find(
+									(elem) => elem.name.toLowerCase() === housesState.currentValue.toLowerCase()
+								)?.id
+							}
+							&fnum=${flatsState.currentValue}
+							&hnum=${housesState.currentValue}
+							`}
+						>
+							Поиск
+						</Link>
 					</main>
 				</section>
 			</div>
